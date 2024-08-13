@@ -1,0 +1,36 @@
+
+@keyframes fadeIn {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+}
+body{
+    background-color:black;
+    display:inline;
+}
+h1{
+    color:rgb(19, 211, 201);
+    text-shadow: 1px 1px 1px rgba(69, 235, 207, 0.5);
+    animation:fadeIn 2s ease-in-out;
+    animation:slideIn 0.4s ease-in-out;
+    font-family: "aerial",fantasy;
+    letter-spacing:  2px;
+    font: weight 200px;
+    display:inline;
+   
+
+}
+div{
+ display :inline;
+
+}
