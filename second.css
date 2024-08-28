@@ -1,36 +1,53 @@
-
-@keyframes fadeIn {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
+/* Ensure full viewport coverage and no margin/padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-@keyframes slideIn {
-    0% {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+/* Style for background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keeps the video behind other content */
 }
-body{
-    background-color:black;
-    display:inline;
-}
-h1{
-    color:rgb(19, 211, 201);
-    text-shadow: 1px 1px 1px rgba(69, 235, 207, 0.5);
-    animation:fadeIn 2s ease-in-out;
-    animation:slideIn 0.4s ease-in-out;
-    font-family: "aerial",fantasy;
-    letter-spacing:  2px;
-    font: weight 200px;
-    display:inline;
-   
 
+/* Style for images and text */
+div img {
+    display: block;
+    margin: 20px auto;
 }
-div{
- display :inline;
 
+h1 {
+    position: relative;
+    z-index: 1; /* Ensures text is on top of the video */
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    font-size: 2.5em; /* Adjust font size as needed */
+}
+
+/* Animation for text */
+.animated-text {
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 2s forwards; /* Fade in and move up */
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
