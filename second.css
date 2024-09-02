@@ -27,7 +27,7 @@ div img {
 h1 {
     position: relative;
     z-index: 1; /* Ensures text is on top of the video */
-    text-align: center;
+    
     color: white;
     margin: 0;
     padding: 20px;
@@ -50,4 +50,7 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+h1:hover{
+    background-color: blue;
 }
