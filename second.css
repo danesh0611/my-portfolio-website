@@ -1,21 +1,30 @@
-/* Ensure full viewport coverage and no margin/padding */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: auto; /* Allows scrolling if content overflows */
     font-family: Arial, sans-serif;
 }
 
-/* Style for background video */
-.background-video {
-    position: absolute;
+/* Style for the container of the background video */
+.video-background {
+    position: fixed; /* Fix the positioning to keep the video in place */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Full viewport width */
+    height: 100%; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to avoid scrollbars */
     z-index: -1; /* Keeps the video behind other content */
+}
+
+/* Style for the iframe inside the video-background container */
+.video-background iframe {
+    position: absolute; /* Absolute positioning to fill the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border: none; /* Remove border */
 }
 
 /* Style for images and text */
@@ -24,14 +33,16 @@ div img {
     margin: 20px auto;
 }
 
+/* Heading styling */
 h1 {
     position: relative;
     z-index: 1; /* Ensures text is on top of the video */
-    
     color: white;
     margin: 0;
     padding: 20px;
     font-size: 2.5em; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
 }
 
 /* Animation for text */
@@ -51,9 +62,17 @@ h1 {
         transform: translateY(0);
     }
 }
-h1:hover{
+
+/* Hover effect for headings */
+h1:hover {
     background-color: blue;
 }
-h2{
-    background-color:white
+
+/* Styling for h2 elements */
+h2 {
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
